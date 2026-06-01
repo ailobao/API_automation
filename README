@@ -6,8 +6,7 @@
 
 **测试规模**：53 个测试用例，100% 通过率
 
-**项目地址**：[GitHub]((https://github.com/yourname/KDTX_APIAutoTest)
-
+**项目地址**：[https://github.com/ailobao/KDTX_API](https://github.com/ailobao/KDTX_API)
 
 ## 技术栈
 
@@ -52,8 +51,8 @@ KDTX_APIAutoTest/
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/yourname/KDTX_APIAutoTest.git
-cd KDTX_APIAutoTest
+git clone https://github.com/ailobao/KDTX_API.git
+
 ```
 
 ### 2. 安装依赖
@@ -75,10 +74,8 @@ python run_tests.py
 
 ### 4. 查看 Allure 报告
 
-bash
-
 ```
-# 1. 清理旧报告
+# 1. 清理旧报告（Windows）
 rmdir /s /q reports\allure_results
 mkdir reports\allure_results
 
@@ -188,7 +185,7 @@ def common_assert(res, business_code=200, msg='成功'):
 
 ## 接口文档
 
-本项目参考的接口文档：[客达天下API文档.md](https://docs/客达天下API文档.md)
+本项目参考的接口文档：[客达天下API文档.md](docs/客达天下API文档.md)
 
 文档包含以下接口的详细说明：
 
@@ -204,6 +201,7 @@ def common_assert(res, business_code=200, msg='成功'):
 
 ## 后续计划
 
+- 更多测试用例,覆盖更多场景
 - 封装 BaseAPI 基类，减少重复代码
 - 增加更多正向场景的深度验证
 - 集成 CI/CD（GitHub Actions）
@@ -211,7 +209,7 @@ def common_assert(res, business_code=200, msg='成功'):
 
 ## 作者
 
-- 姓名：alobao
+- 姓名：alobao（[GitHub](https://github.com/ailobao)）
 
 ## 许可证
 
