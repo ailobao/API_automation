@@ -1,0 +1,304 @@
+{
+    "add_course": [
+         {
+            "name": "正向-所有参数正确",
+            "params": {
+                "name": "测试课程001",
+                "subject": "2",
+                "price": 899,
+                "applicablePerson": "2",
+                "info": "课程介绍"
+            },
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功"
+        },
+        {
+            "name": "反向-name缺失（不传name字段）",
+            "params": {
+                "subject": "2",
+                "price": 899,
+                "applicablePerson": "2",
+                "info": ""
+            },
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功",
+            "expected_code0": 500,
+            "expected_msg0": "参数错误"
+        },
+        {
+            "name": "反向-name为空",
+            "params": {
+                "name": "",
+                "subject": "2",
+                "price": 899,
+                "applicablePerson": "2",
+                "info": ""
+            },
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功",
+            "expected_code0": 500,
+            "expected_msg0": "课程名称不能为空"
+        },
+        {
+            "name": "反向-subject缺失",
+            "params": {
+                "name": "测试课程",
+                "price": 899,
+                "applicablePerson": "2",
+                "info": ""
+            },
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功",
+            "expected_code0": 500,
+            "expected_msg0": "参数错误"
+        },
+        {
+            "name": "反向-subject为空",
+            "params": {
+                "name": "测试课程",
+                "subject": "",
+                "price": 899,
+                "applicablePerson": "2",
+                "info": ""
+            },
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功",
+            "expected_code0": 500,
+            "expected_msg0": "学科不能为空"
+        },
+        {
+            "name": "反向-price缺失",
+            "params": {
+                "name": "测试课程",
+                "subject": "2",
+                "applicablePerson": "2",
+                "info": ""
+            },
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功",
+            "expected_code0": 500,
+            "expected_msg0": "参数错误"
+        },
+        {
+            "name": "反向-price为负数",
+            "params": {
+                "name": "测试课程",
+                "subject": "2",
+                "price": -100,
+                "applicablePerson": "2",
+                "info": ""
+            },
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功",
+            "expected_code0": 500,
+            "expected_msg0": "价格不能为负数"
+        },
+        {
+            "name": "反向用例-缺失token（不传Authorization头）",
+            "data": {
+                "name": "测试课程002",
+                "subject": "2",
+                "price": 899,
+                "applicablePerson": "2",
+                "info": ""
+            },
+            "token_type": "missing",
+            "expected_code": 401,
+            "expected_msg": "认证失败，无法访问系统资源"
+        },
+        {
+            "name": "反向用例-空token",
+            "data": {
+                "name": "测试课程003",
+                "subject": "2",
+                "price": 899,
+                "applicablePerson": "2",
+                "info": ""
+            },
+            "token_type": "empty",
+            "expected_code": 401,
+            "expected_msg": "认证失败，无法访问系统资源"
+        },
+        {
+            "name": "反向用例-无效token",
+            "data": {
+                "name": "测试课程004",
+                "subject": "2",
+                "price": 899,
+                "applicablePerson": "2",
+                "info": ""
+            },
+            "token_type": "invalid",
+            "expected_code": 401,
+            "expected_msg": "认证失败，无法访问系统资源"
+        },
+        {
+            "name": "反向用例-过期token",
+            "data": {
+                "name": "测试课程005",
+                "subject": "2",
+                "price": 899,
+                "applicablePerson": "2",
+                "info": ""
+            },
+            "token_type": "expired",
+            "expected_code": 401,
+            "expected_msg": "认证失败，无法访问系统资源"
+        }
+    ],
+
+    "query_course_list": [
+        {
+            "name": "正向-查询全部",
+            "params": {},
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "查询成功"
+        },
+        {
+            "name": "正向-按名称查询",
+            "params": {"name": "天天开心好课程"},
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "查询成功"
+        },
+        {
+            "name": "正向-按学科和姓名查询",
+            "params": {"subject": "2","name": "天天开心好课程"},
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "查询成功"
+        },
+        {
+            "name": "正向-按学科和姓名和价格查询",
+            "params": {"subject": "2","name": "天天开心好课程","price": 998},
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "查询成功"
+        },
+        {
+            "name": "反向-查询不存在的名称",
+            "params": {"name": "不存在的课程xxxxx"},
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "查询成功",
+            "expected_total": 0
+        },
+        {
+            "name": "反向-token缺失",
+            "params": {},
+            "token_type": "missing",
+            "expected_code": 401,
+            "expected_msg": "认证失败"
+        },
+        {
+            "name": "反向-token无效",
+            "params": {},
+            "token_type": "invalid",
+            "expected_code": 401,
+            "expected_msg": "认证失败"
+        },
+        {
+            "name": "反向用例-过期token",
+            "data": {
+                "name": "测试课程005",
+                "subject": "2",
+                "price": 899,
+                "applicablePerson": "2",
+                "info": ""
+            },
+            "token_type": "expired",
+            "expected_code": 401,
+            "expected_msg": "认证失败，无法访问系统资源"
+        }
+    ],
+
+    "query_course": [
+       {
+            "name": "正向用例-查询存在的课程",
+            "params": {"course_id": 596356},
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功"
+        },
+        {
+            "name": "反向用例-查询不存在的课程",
+            "params": {"course_id": 999999},
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功",
+            "expected_code0": 500,
+            "expected_msg0": "操作失败"
+        },
+        {
+            "name": "反向用例-课程ID无效",
+            "params": {"course_id": -1},
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功",
+            "expected_code0": 500,
+            "expected_msg0": "操作失败"
+        },
+        {
+            "name": "反向用例-课程ID缺失",
+            "params": {},
+            "token_type": "valid",
+            "expected_code": 500,
+            "expected_msg": "Request method 'GET' not supported"
+        }
+    ],
+
+    "update_course": [
+        {
+            "name": "正向用例-正常修改课程",
+            "data": {
+                "id": 596356,
+                "name": "修改后的课程名称",
+                "price": 999
+            },
+            "expected_code": 200,
+            "expected_msg": "操作成功"
+        },
+        {
+            "name": "反向用例-修改不存在的课程",
+            "data": {
+                "id": 999999,
+                "name": "修改不存在的课程"
+            },
+            "expected_code": 500,
+            "expected_msg": "操作失败"
+        },
+        {
+            "name": "反向用例-缺少id参数",
+            "data": {
+                "name": "缺少id的修改"
+            },
+            "expected_code": 500,
+            "expected_msg": "操作失败"
+        }
+    ],
+
+    "delete_course": [
+        {
+        "name": "正向用例-删除存在的课程",
+        "params": {"course_id": 596549},
+        "token_type": "valid",
+        "expected_code": 200,
+        "expected_msg": "操作成功"
+    },
+    {
+        "name": "反向用例-删除不存在的课程",
+        "params": {"course_id": 999999},
+        "token_type": "valid",
+        "expected_code": 500,
+        "expected_msg": "操作失败"
+    }
+    ]
+}

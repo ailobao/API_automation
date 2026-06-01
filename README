@@ -1,0 +1,48 @@
+# KDTX 接口自动化测试框架
+
+## 项目简介
+
+基于 Python + Pytest + Requests 的接口自动化测试框架，采用数据驱动设计，覆盖客达天下系统的登录、课程管理、合同管理三大模块。
+
+**测试规模**：53 个测试用例，100% 通过率
+
+**项目地址**：[GitHub]((https://github.com/yourname/KDTX_APIAutoTest)
+
+
+## 技术栈
+
+| 技术 | 用途 |
+|------|------|
+| Python 3.10+ | 编程语言 |
+| Pytest | 测试框架 |
+| Requests | HTTP 请求 |
+| Allure | 测试报告 |
+| JSON | 数据驱动 |
+
+
+## 项目结构
+
+KDTX_APIAutoTest/
+├── api/ # API 封装层
+│ ├── login_api.py # 登录模块
+│ ├── course_api.py # 课程模块
+│ └── contract_api.py # 合同模块
+├── testcases/ # 测试用例层
+│ ├── test_login_cases.py # 登录测试（12条）
+│ ├── test_course_cases.py # 课程测试（24条）
+│ └── test_contract_cases.py # 合同测试（17条）
+├── data/ # 测试数据层
+│ ├── login_data.json
+│ ├── course_data.json
+│ └── contract_data.json
+├── docs/ # 文档
+│ └── 客达天下API文档.md # 接口文档
+├── utils/ # 工具层
+│ └── data_json_loader.py
+├── reports/ # 测试报告
+│ └── allure_results/
+├── conftest.py # pytest 配置 & fixtures
+├── config.py # 全局配置（URL、接口路径）
+├── pytest.ini # pytest 配置文件
+├── run_tests.py # 一键执行脚本
+└── requirements.txt # 依赖清单

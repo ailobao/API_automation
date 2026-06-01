@@ -1,0 +1,97 @@
+{
+     "login_success": {
+        "uuid": "valid",
+        "username": "admin",
+        "password": "HM_2023_test",
+        "code": "2",
+        "expected_code": 200,
+        "expected_msg": "操作成功"
+    },
+    "wrong_password": {
+        "uuid": "valid",
+        "username": "admin",
+        "password": "wrong",
+        "code": "2",
+        "expected_code": 500,
+        "expected_msg": "用户不存在/密码错误"
+    },
+    "wrong_username": {
+        "uuid": "valid",
+        "username": "wrong",
+        "password": "HM_2023_test",
+        "code": "2",
+        "expected_code": 500,
+        "expected_msg": "用户不存在/密码错误"
+    },
+    "empty_username": {
+        "uuid": "valid",
+        "username": "",
+        "password": "HM_2023_test",
+        "code": "2",
+        "expected_code": 500,
+        "expected_msg": "用户不存在/密码错误"
+    },
+    "empty_password": {
+        "uuid": "valid",
+        "username": "admin",
+        "password": "",
+        "code": "2",
+        "expected_code": 500,
+        "expected_msg": "用户不存在/密码错误"
+    },
+    "wrong_code": {
+        "uuid": "valid",
+        "username": "admin",
+        "password": "HM_2023_test",
+        "code": "999",
+        "expected_code": 500,
+        "expected_msg": "验证码错误"
+    },
+    "empty_code": {
+        "uuid": "valid",
+        "username": "admin",
+        "password": "HM_2023_test",
+        "code": "",
+        "expected_code": 500,
+        "expected_msg": "验证码错误"
+    },
+    "missing_code": {
+        "uuid": "valid",
+        "username": "admin",
+        "password": "HM_2023_test",
+        "expected_code": 500,
+        "expected_msg": ""
+    },
+    "empty_uuid": {
+        "uuid": "",
+        "username": "admin",
+        "password": "HM_2023_test",
+        "code": "2",
+        "expected_code": 500,
+        "expected_msg": "验证码已失效"
+    },
+    "sql_injection_username": {
+        "uuid": "valid",
+        "username": "' OR '1'='1",
+        "password": "HM_2023_test",
+        "code": "2",
+        "expected_code": 405,
+        "expected_msg": "请求失败"
+    },
+    "sql_injection_password": {
+        "uuid": "valid",
+        "username": "admin",
+        "password": "' OR '1'='1",
+        "code": "2",
+        "expected_code": 405,
+        "expected_msg": "请求失败"
+    },
+    "special_chars_username": {
+        "uuid": "valid",
+        "username": "admin@#$%",
+        "password": "HM_2023_test",
+        "code": "2",
+        "expected_code": 500,
+        "expected_msg": "用户不存在/密码错误"
+    }
+}

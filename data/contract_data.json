@@ -1,0 +1,238 @@
+{
+    "add_contract": [
+        {
+            "name": "正向-正常新增合同",
+            "params": {
+                "name": "alobao",
+                "phone": "13513531480",
+                "contractNo": "AUTO",
+                "subject": "6",
+                "courseId": 593253,
+                "channel": "0",
+                "activityId": 77,
+                "fileName": "/profile/upload/2026/06/01/110326b6-a718-41af-b5ca-c8cf1250d30a.pdf"
+            },
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功"
+        },
+        {
+            "name": "反向-缺少name（后端无校验）",
+            "params": {
+                "phone": "13513531480",
+                "contractNo": "AUTO",
+                "subject": "6",
+                "courseId": 593253,
+                "channel": "0",
+                "activityId": 77,
+                "fileName": "/profile/upload/2026/06/01/ed79172c-ef79-480d-9076-dc824a853e70.pdf"
+            },
+            "token_type": "valid",
+            "expected_code": 500,
+            "expected_msg": "Field 'name' doesn't have a default value"
+        },
+        {
+            "name": "反向-缺少phone（后端无校验）",
+            "params": {
+                "name": "alobao",
+                "contractNo": "AUTO",
+                "subject": "6",
+                "courseId": 593253,
+                "channel": "0",
+                "activityId": 77,
+                "fileName": "/profile/upload/2026/06/01/da398da1-a408-41ad-9d61-902958ee365e.pdf"
+            },
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功",
+            "expected_code0": 500,
+            "expected_msg0": "参数错误"
+        },
+        {
+            "name": "反向-缺少contractNo（后端无校验）",
+            "params": {
+                "name": "alobao",
+                "phone": "13513531480",
+                "subject": "6",
+                "courseId": 593253,
+                "channel": "0",
+                "activityId": 77,
+                "fileName": "/profile/upload/2026/06/01/9c420eb8-553f-499b-a4e2-ba24267b8b48.pdf"
+            },
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功",
+            "expected_code0": 500,
+            "expected_msg0": "参数错误"
+        },
+        {
+            "name": "反向-缺少subject（后端无校验）",
+            "params": {
+                "name": "alobao",
+                "phone": "13513531480",
+                "contractNo": "AUTO",
+                "courseId": 593253,
+                "channel": "0",
+                "activityId": 77,
+                "fileName": "/profile/upload/2026/06/01/41445fe5-04dd-40dd-999d-bacb7ace7ae5.pdf"
+            },
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功",
+            "expected_code0": 500,
+            "expected_msg0": "参数错误"
+        },
+        {
+            "name": "反向-缺少courseId（后端无校验）",
+            "params": {
+                "name": "alobao",
+                "phone": "13513531480",
+                "contractNo": "AUTO",
+                "subject": "6",
+                "channel": "0",
+                "activityId": 77,
+                "fileName": "/profile/upload/2026/06/01/0c1a98b8-3159-4b6b-b69e-b86bc39764bb.pdf"
+            },
+            "token_type": "valid",
+            "expected_code": 500,
+            "expected_msg": ""
+        },
+        {
+            "name": "反向-缺少fileName（后端无校验）",
+            "params": {
+                "name": "alobao",
+                "phone": "13513531480",
+                "contractNo": "AUTO",
+                "subject": "6",
+                "courseId": 593253,
+                "channel": "0",
+                "activityId": 77
+            },
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功",
+            "expected_code0": 500,
+            "expected_msg0": "参数错误"
+        },
+        {
+            "name": "反向-name为空（后端无校验）",
+            "params": {
+                "name": "",
+                "phone": "13513531480",
+                "contractNo": "AUTO",
+                "subject": "6",
+                "courseId": 593253,
+                "channel": "0",
+                "activityId": 77,
+                "fileName": "/profile/upload/2026/06/01/d535509b-6c17-4008-9b53-199665a1bf2f.pdf"
+            },
+            "token_type": "valid",
+            "expected_code": 500,
+            "expected_msg": "Field 'name' doesn't have a default value"
+        },
+        {
+            "name": "反向-phone为空（后端无校验）",
+            "params": {
+                "name": "alobao",
+                "phone": "",
+                "contractNo": "AUTO",
+                "subject": "6",
+                "courseId": 593253,
+                "channel": "0",
+                "activityId": 77,
+                "fileName": "/profile/upload/2026/06/01/afb13463-0e97-4139-9ee6-e2a1949b3beb.pdf"
+            },
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "操作成功",
+            "expected_code0": 500,
+            "expected_msg0": "手机号不能为空"
+        },
+        {
+            "name": "反向-token缺失",
+            "params": {
+                "name": "alobao",
+                "phone": "13513531480",
+                "contractNo": "AUTO",
+                "subject": "6",
+                "courseId": 593253,
+                "channel": "0",
+                "activityId": 77,
+                "fileName": "/profile/upload/2026/06/01/11da3d36-cf1d-47c3-a338-5f7a8761e20a.pdf"
+            },
+            "token_type": "missing",
+            "expected_code": 401,
+            "expected_msg": "认证失败"
+        },
+        {
+            "name": "反向-token无效",
+            "params": {
+                "name": "alobao",
+                "phone": "13513531480",
+                "contractNo": "AUTO",
+                "subject": "6",
+                "courseId": 593253,
+                "channel": "0",
+                "activityId": 77,
+                "fileName": "/profile/upload/2026/06/01/2e3dbe2b-c732-477c-a52b-f5245a55fe69.pdf"
+            },
+            "token_type": "invalid",
+            "expected_code": 401,
+            "expected_msg": "认证失败"
+        }
+    ],
+
+    "query_contract_list": [
+        {
+            "name": "正向-按手机号查询",
+            "params": {"phone": "13513531480"},
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "查询成功"
+        },
+        {
+            "name": "反向-查询不存在的手机号",
+            "params": {"phone": "99999999999"},
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "查询成功",
+            "expected_code0": 500,
+            "expected_msg0": "手机号不能为空",
+            "expected_total": 0
+        },
+        {
+            "name": "反向-手机号为空",
+            "params": {"phone": ""},
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "查询成功",
+            "expected_code0": 500,
+            "expected_msg0": "手机号不能为空",
+            "expected_total": 0
+        }
+    ],
+
+    "contract_remove": [
+        {
+            "name": "正向-删除存在的合同",
+            "params": {"id": "dynamic"},
+            "token_type": "valid",
+            "expected_code": 200,
+            "expected_msg": "删除成功"
+        },
+        {
+            "name": "反向-缺少id",
+            "params": {},
+            "token_type": "valid",
+            "expected_code": 500,
+            "expected_msg": "缺少必填参数：id"
+        },
+        {
+            "name": "反向-id不存在",
+            "params": {"id": "99999999999999999"},
+            "token_type": "valid",
+            "expected_code": 500,
+            "expected_msg": "删除失败"
+        }
+    ]
+}
