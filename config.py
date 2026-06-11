@@ -1,5 +1,5 @@
 # config.py
-BASE_URL = "http://kdtx-test.itheima.net"
+BASE_URL = ""
 
 # login
 LOGIN_PATH_CAPTCHAIMAGE = "/api/captchaImage"
